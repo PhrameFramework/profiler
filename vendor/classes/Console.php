@@ -25,6 +25,7 @@ class Console {
 			"type" => 'log'
 		);
 		$GLOBALS['debugger_logs']['console'][] = $logItem;
+		isset($GLOBALS['debugger_logs']['logCount']) or $GLOBALS['debugger_logs']['logCount'] = 0;
 		$GLOBALS['debugger_logs']['logCount'] += 1;
 	}
 	
@@ -78,11 +79,11 @@ class Console {
 	     SET DEFAULTS & RETURN LOGS
 	------------------------------------*/
 	
-	public function getLogs() {
-		if(!$GLOBALS['debugger_logs']['memoryCount']) $GLOBALS['debugger_logs']['memoryCount'] = 0;
-		if(!$GLOBALS['debugger_logs']['logCount']) $GLOBALS['debugger_logs']['logCount'] = 0;
-		if(!$GLOBALS['debugger_logs']['speedCount']) $GLOBALS['debugger_logs']['speedCount'] = 0;
-		if(!$GLOBALS['debugger_logs']['errorCount']) $GLOBALS['debugger_logs']['errorCount'] = 0;
+	public static function getLogs() {
+		! isset($GLOBALS['debugger_logs']['memoryCount']) and $GLOBALS['debugger_logs']['memoryCount'] = 0;
+		! isset($GLOBALS['debugger_logs']['logCount'])    and $GLOBALS['debugger_logs']['logCount'] = 0;
+		! isset($GLOBALS['debugger_logs']['speedCount'])  and $GLOBALS['debugger_logs']['speedCount'] = 0;
+		! isset($GLOBALS['debugger_logs']['errorCount'])  and $GLOBALS['debugger_logs']['errorCount'] = 0;
 		return $GLOBALS['debugger_logs'];
 	}
 }

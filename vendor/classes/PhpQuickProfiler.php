@@ -20,10 +20,10 @@ class PhpQuickProfiler {
 	public $output = array();
 	public $config = '';
 	
-	public function __construct($startTime, $config = '/pqp/') {
+	public function __construct($startTime, $config = '') {
 		$this->startTime = $startTime;
 		$this->config = $config;
-		require_once($_SERVER['DOCUMENT_ROOT'].$config.'classes/Console.php');
+		require_once('Console.php');
 	}
 	
 	/*-------------------------------------------
@@ -32,7 +32,7 @@ class PhpQuickProfiler {
 	
 	public function gatherConsoleData() {
 		$logs = Console::getLogs();
-		if($logs['console']) {
+		if(isset($logs['console'])) {
 			foreach($logs['console'] as $key => $log) {
 				if($log['type'] == 'log') {
 					$logs['console'][$key]['data'] = print_r($log['data'], true);
@@ -145,7 +145,7 @@ class PhpQuickProfiler {
 	     HELPER FUNCTIONS TO FORMAT DATA
 	-------------------------------------------*/
 	
-	function getMicroTime() {
+	public static function getMicroTime() {
 		$time = microtime();
 		$time = explode(' ', $time);
 		return $time[1] + $time[0];
@@ -195,7 +195,7 @@ class PhpQuickProfiler {
 		$this->gatherMemoryData();
 		$this->gatherQueryData();
 		$this->gatherSpeedData();
-		require_once($_SERVER['DOCUMENT_ROOT'].$this->config.'display.php');
+		require_once(__DIR__.'/../display.php');
 		displayPqp($this->output, $this->config);
 	}
 	

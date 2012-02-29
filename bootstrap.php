@@ -16,6 +16,8 @@ use Phrame\Core;
 
 class Bootstrap
 {
+    public static $profiler;
+
     /**
      * Loads and initializes extension
      * 
@@ -26,6 +28,10 @@ class Bootstrap
         $application = $application ?: Core\Application::instance();
 
         require_once 'vendor/classes/PhpQuickProfiler.php';
+        require_once 'vendor/classes/Console.php';
+        require_once 'vendor/classes/MySqlDatabase.php';
+
+        self::$profiler = new Profiler($application);
     }
 
 }
