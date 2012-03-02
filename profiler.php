@@ -33,7 +33,8 @@ class Profiler
     /**
      * Creates profiler
      * 
-     * @param  Core\Application  $application  Application object
+     * @param   Core\Application  $application  Application object
+     * @return  void
      */
     public function __construct($application)
     {
@@ -42,6 +43,8 @@ class Profiler
 
     /**
      * Outputs profiler data
+     * 
+     * @return  void
      */
     public function __destruct()
     {
@@ -51,7 +54,8 @@ class Profiler
     /**
      * Logs data
      * 
-     * @param  string  $data  Data to log
+     * @param   string  $data  Data to log
+     * @return  void
      */
     public function log($data)
     {
