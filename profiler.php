@@ -33,10 +33,10 @@ class Profiler
     /**
      * Creates profiler
      * 
-     * @param   Core\Application  $application  Application object
+     * @param   Core\Application  $app  Application object
      * @return  void
      */
-    public function __construct($application)
+    public function __construct($app)
     {
         $this->profiler = new \PhpQuickProfiler(\PhpQuickProfiler::getMicroTime());
     }
