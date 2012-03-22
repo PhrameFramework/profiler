@@ -3,7 +3,7 @@
  * Part of the Phrame
  *
  * @package    Profiler
- * @version    0.3.0
+ * @version    0.4.0
  * @author     Phrame Development Team
  * @license    MIT License
  * @copyright  2012 Phrame Development Team
@@ -21,7 +21,7 @@ class Bootstrap
     /**
      * Loads and initializes extension
      * 
-     * @param   Core\Application  $app  Application object
+     * @param   \Phrame\Core\Application  $app  Application object
      * @return  void
      */
     public static function init($app = null)
