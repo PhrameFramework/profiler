@@ -26,7 +26,7 @@ class Bootstrap
      */
     public static function init($app = null)
     {
-        $app = $app ?: Core\Application::instance();
+        $app = $app ?: Core\Applications::instance();
 
         require_once 'vendor/classes/PhpQuickProfiler.php';
         require_once 'vendor/classes/Console.php';
