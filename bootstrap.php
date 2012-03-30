@@ -21,18 +21,16 @@ class Bootstrap
     /**
      * Loads and initializes extension
      * 
-     * @param   \Phrame\Core\Application  $app  Application object
+     * @param   string  $app_name  Application name
      * @return  void
      */
-    public static function init($app = null)
+    public static function init($app_name = null)
     {
-        $app = $app ?: Core\Applications::instance();
-
         require_once 'vendor/classes/PhpQuickProfiler.php';
         require_once 'vendor/classes/Console.php';
         require_once 'vendor/classes/MySqlDatabase.php';
 
-        self::$profiler = new Profiler($app);
+        self::$profiler = new Profiler($app_name);
     }
 
 }
