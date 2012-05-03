@@ -14,6 +14,9 @@ namespace Phrame\Profiler;
 
 use Phrame\Core;
 
+/**
+ * Bootstrap class
+ */
 class Bootstrap
 {
     public static $profiler;

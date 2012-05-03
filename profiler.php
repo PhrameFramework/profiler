@@ -14,6 +14,9 @@ namespace Phrame\Profiler;
 
 use Phrame\Core;
 
+/**
+ * Profiler class
+ */
 class Profiler
 {
     /**
@@ -33,8 +36,7 @@ class Profiler
     /**
      * Creates profiler
      * 
-     * @param   string  $app_name  Application name
-     * @return  void
+     * @param  string  $app_name  Application name
      */
     public function __construct($app_name = null)
     {
